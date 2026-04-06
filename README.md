@@ -1,7 +1,7 @@
-===========================================================================
-SUPPLEMENTARY CODE REPOSITORY
-"Lattice Regularization of Topological Solitons: 3D Framing, the Mass Hierarchy, and the WIMP Miracle"
-===========================================================================
+# SUPPLEMENTARY CODE REPOSITORY
+
+**"Lattice Regularization of Topological Solitons: 3D Framing, the Mass Hierarchy, and the WIMP Miracle"**
+---
 
 This repository contains the complete, reproducible computational framework 
 accompanying the manuscript. The codebase is designed to be transparent, 
@@ -16,7 +16,7 @@ Python 3.8+
 Install requirements via:
 pip install -r requirements.txt
 
---- FILE ARCHITECTURE ---
+## FILE ARCHITECTURE
 
 1. THE MASS HIERARCHY & INVERSE SPECTRAL PROBLEM
    - topological_hamiltonian.py 
@@ -76,12 +76,15 @@ pip install -r requirements.txt
      [Supplementary] Monte Carlo demonstration of topological phase-space suppression 
      and entropy growth on the B_4 braid group.
 
---- HOW TO RUN ---
+## HOW TO RUN
 All scripts are standalone. You can verify the core results by running:
 > python run_calibration.py
 > python verify_alexander_polynomials.py
 > python calculate_dm_mass.py
+> python simulate_relic_annihilation.py
+> python simulate_elastic_scattering.py
 > python framed_braid_algebra.py
+> python plot_ckm_matrix.py
 > python sensitivity_analysis.py
 > python verify_higher_invariants.py
 > python visualize_coarse_graining.py
