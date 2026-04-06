@@ -3,6 +3,8 @@
 **"Lattice Regularization of Topological Solitons: 3D Framing, the Mass Hierarchy, and the WIMP Miracle"**
 ---
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19441820.svg)](https://doi.org/10.5281/zenodo.19441820)
+
 This repository contains the complete, reproducible computational framework 
 accompanying the manuscript. The codebase is designed to be transparent, 
 deterministic, and free of "black-box" machine learning algorithms.
