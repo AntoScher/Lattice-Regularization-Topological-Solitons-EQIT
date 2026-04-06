@@ -9,7 +9,7 @@ deterministic, and free of "black-box" machine learning algorithms.
 
 ### 🚀 Interactive Model Demonstration
 You can run the core phenomenological mass predictions directly in your browser without installing any dependencies:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AntoScher/EQIT-Continuous-Limit/blob/main/Model_Demonstration.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AntoScher/Lattice-Regularization-Topological-Solitons-EQIT/blob/main/Model_Demonstration.ipynb)
 
 --- DEPENDENCIES ---
 Python 3.8+
