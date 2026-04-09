@@ -75,3 +75,28 @@ if __name__ == "__main__":
     print(f"Matrix dimension: {2**K_8}x{2**K_8}")
     print(f"Dimensionless energy E_0: {E0_8:.2f} m_e")
     print(f"Physical mass of Dark Matter: {mass_8_TeV * 1000:.2f} GeV ({mass_8_TeV:.3f} TeV)\n")
+
+    # --- Sensitivity Analysis (Monte Carlo) ---
+    print("=== Sensitivity Analysis (Monte Carlo) for Dark Matter ===")
+    N_samples = 5000
+    noise_level = 0.002 # 0.2% Gaussian noise
+    
+    masses_8_TeV_mc = []
+    print(f"Generating {N_samples} vacuum states with {noise_level*100}% dispersion in mu and lam...")
+    
+    for i in range(N_samples):
+        # Injecting uncorrelated Gaussian noise into the fundamental vacuum parameters
+        mu_noisy = mu * (1.0 + noise_level * torch.randn(1).item())
+        lam_noisy = lam * (1.0 + noise_level * torch.randn(1).item())
+        
+        H_8_noisy = build_hamiltonian(K_8, C_83, mu_noisy, beta, lam_noisy, delta, B)
+        E0_8_noisy = torch.linalg.eigvalsh(H_8_noisy)[0].real.item()
+        masses_8_TeV_mc.append((E0_8_noisy * m_e_MeV / 1000.0) / 1000.0)
+        
+    masses_tensor = torch.tensor(masses_8_TeV_mc)
+    mean_mass = masses_tensor.mean().item()
+    std_mass = masses_tensor.std().item()
+    
+    print(f"Mean DM mass (8_3): {mean_mass:.3f} TeV")
+    print(f"Std dev (1 sigma):  {std_mass:.3f} TeV")
+    print(f"Error Variance:     {(std_mass / mean_mass) * 100:.2f}%")
